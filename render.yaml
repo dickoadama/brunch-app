@@ -4,8 +4,8 @@ services:
     env: php
     region: frankfurt
     plan: free
-    buildCommand: bash deploy.sh
-    startCommand: bash start.sh
+    buildCommand: composer install --no-dev --optimize-autoloader
+    startCommand: cd public/ && php -S 0.0.0.0:$PORT
     envVars:
       - key: APP_NAME
         value: BRUNCH
