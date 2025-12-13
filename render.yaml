@@ -15,3 +15,7 @@ services:
         value: https://${RENDER_SERVICE_NAME}.${RENDER_EXTERNAL_HOSTNAME}
       - key: LOG_CHANNEL
         value: errorlog
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_PORT
+        value: 5432

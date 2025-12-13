@@ -6,6 +6,10 @@ if [ -z "$APP_KEY" ]; then
     php artisan key:generate --force
 fi
 
+# Attendre que la base de données soit prête
+echo "Attente de la disponibilité de la base de données..."
+sleep 5
+
 # Exécuter les migrations
 echo "Exécution des migrations..."
 php artisan migrate --force

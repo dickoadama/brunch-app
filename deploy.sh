@@ -14,6 +14,10 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
+# Attendre que la base de données soit prête
+echo "Attente de la disponibilité de la base de données..."
+sleep 5
+
 # Exécuter les migrations
 echo "Exécution des migrations..."
 php artisan migrate --force
