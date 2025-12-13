@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: brunch-app
+    env: php
+    buildCommand: bash deploy.sh
+    startCommand: bash start.sh
+    envVars:
+      - key: APP_NAME
+        value: BRUNCH
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://${RENDER_SERVICE_NAME}.${RENDER_EXTERNAL_HOSTNAME}
+      - key: LOG_CHANNEL
+        value: errorlog
